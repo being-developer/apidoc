@@ -8,16 +8,18 @@
   <script src="jquery-ui.js"></script>
    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script>
-  $(function() {
-    $( "#accordion" ).accordion();
-  });
-  </script>
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+       
+
 </head>
 <style>
 
 h4{
-color:grey;
+color:grey;margin-left:10px;
 }
 
 #accordion
@@ -29,18 +31,19 @@ left:10%;
 
 </style>
 
-<body>
- <center><h1> API DOCUMENTATION </h1>
- <br>
- <h2>Horizon</h2>
+<body style="background:#123126;">
+ <center><h1 class="teal"> API DOCUMENTATION </h1>
+
+ <h3 class="teal-text">Horizon</h3>
  
  </center>
-<div id="accordion" >
+ 
+<div id="accordion"> 
+<ul class="collapsible popout white-text transparent grey-border z-depth-5" data-collapsible="accordion">
   
-  
-  <h3>/api/v1.0/login   [POST]</h3>
-  <div>
-    <li>
+  <li>
+ <div class="collapsible-header teal waves-effect waves-purple"> <p>/api/v1.0/login  <io class="new badge orange">POST</io></p></div>
+   <div class="collapsible-body" >
     <table  class="table">
     <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
     <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
@@ -54,20 +57,21 @@ left:10%;
     </p>
     <br>
     <h4>Return</h4>
-    <li>access_token</li> 
-    </li>
+    <p>access_token</p>
     
   </div>
+  </li>
   
-  
-   <h3>/api/v1.0/profile  [POST]</h3>
-  <div>
-    <li>
-    <table " class="table">
+
+	<li><div class="collapsible-header teal waves-effect waves-purple"> 
+  <p>/api/v1.0/profile  <io class="new badge orange">POST</io></p></div>
+  <div class="collapsible-body ">
+    
+    <table  class="table">
     <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
     <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
     <tr><td style="color:red">username</td><td>*</td><td>json/formData</td><tr>
-    <tr><td style="color:green">accessToken</td><td>+</td><td>header</td><tr>
+   <tr><td style="color:green">accessToken</td><td>+</td><td>header</td><tr>
     </table>
     
         <h4>Info</h4>
@@ -76,95 +80,187 @@ left:10%;
     </p>
     <br>
     <h4>Return</h4>
-    <li>Json of user details.</li> 
-    </li>
-    
+  <p>  Json of user details.</p>
   </div>
+  </li>
   
   
   
-  <h3>/api/v1.0/logout  [GET,POST]</h3>
-  <div>
-    <li>
-    <table  class="table">
-    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
-    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
-    </table>
-    
-        <h4>Info</h4>
-    <p>
-    This endpoint is for users to logout.
-    </p>
-    <br>
-    <h4>Return</h4>
-    <li>Json of logged out.</li> 
-    </li>
-    
-  </div>
-  
-  
-  
-  
-  
-  
-  <h3>/api/v1.0/connections  [GET,POST]</h3>
-  <div>
-    <li>
-    <table  class="table">
-    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
-    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
-    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
-    <tr><td style="color:green">username</td><td>+</td><td>json</td><tr>
-    </table>
-    
-        <h4>Info</h4>
-    <p>
-    This endpoint is for getting user connections.
-    </p>
-    <br>
-    <h4>Return</h4>
-    <li>Json of connections.</li> 
-    </li>
-    
+  <li><div class="collapsible-header teal waves-effect waves-purple"> 
+	  <p>api/v1.0/notifications<io class="new badge orange">POST</io></p> </div>
+<div class="collapsible-body ">   
  
-  </div>
-  
-  
-  
-  
-  
-
-<h3>/api/v1.0/notifications  [POST]</h3>
-  <div>
-    <li>
     <table  class="table">
     <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
     <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
     <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
     <tr><td style="color:green">since_time (notifications since time)</td><td>+</td><td>json</td><tr>
    <tr><td style="color:green">untill_time (notifications untill time)</td><td>+</td><td>json</td><tr>
-	<tr><td style="color:green">all (if all notifications)</td><td>+</td><td>json</td><tr>
+        <tr><td style="color:green">all (if all notifications)</td><td>+</td><td>json</td><tr>
 
  </table>
-    
+
         <h4>Info</h4>
     <p>
     This endpoint is for getting user notiifications.[default latest 10 notifications]
     </p>
     <br>
     <h4>Return</h4>
-    <li>Json of notification.</li> 
-    </li>
+   <p>Json of notification.</p>
     
+
+
+  </div></li>
+
+<li><div class="collapsible-header teal waves-effect waves-purple"> 
+<p>/api/v1.0/logout  <io class="new badge orange">GET/POST</io></p>
+	  </div> <div class="collapsible-body"> 
+	    
+	    <table  class="table">
+	    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+	    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+	    </table>
+	    
+		<h4>Info</h4>
+	    <p>
+	    This endpoint is for users to logout.
+	    </p>
+	    <br>
+	    <h4>Return</h4>
+	    <p>Json of logged out.</p> 
+	    
+	    
+	  </div>
+	  </li>
+	  
+	  
+	  
+	  
+	  <li><div class="collapsible-header teal waves-effect waves-light"> 
+	  <p>/api/v1.0/connections  <io class="new badge orange">GET/POST</io></p>
+	  </div><div class="collapsible-body"> 
+	    
+	    <table  class="table">
+	    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+	    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+	    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+	    <tr><td style="color:green">username</td><td>+</td><td>json</td><tr>
+	    </table>
+	    
+		<h4>Info</h4>
+	    <p>
+	    This endpoint is for getting user connections.
+	    </p>
+	    <br>
+	    <h4>Return</h4>
+	    <p>Json of connections.</p> 
+	    
+	    
+	 
+	  </div>
+	  </li>
+	  
+	  
+	  
+	  
+<li><div class="collapsible-header teal waves-effect waves-light"> 
+	<p>/api/v1.0/notifications  <io class="new badge orange">POST</io></p>
+	  </div><div class="collapsible-body"> 
+	    
+	    <table  class="table">
+	    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+	    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+	    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+	    <tr><td style="color:green">since_time (notifications since time)</td><td>+</td><td>json</td><tr>
+	   <tr><td style="color:green">untill_time (notifications untill time)</td><td>+</td><td>json</td><tr>
+		<tr><td style="color:green">all (if all notifications)</td><td>+</td><td>json</td><tr>
+
+	 </table>
+	    
+		<h4>Info</h4>
+	    <p>
+	    This endpoint is for getting user notiifications.[default latest 10 notifications]
+	    </p>
+	    <br>
+	    <h4>Return</h4>
+	    <p>Json of notification.</p> 
+	    
+	    
+	 
+	  </div>
+</li>
+
+
+
+<li><div class="collapsible-header teal waves-effect waves-light"> 
+<p>/api/v1.0/add_friend  <io class="new badge orange">POST</io></p>
+          </div><div class="collapsible-body"> 
+            
+            <table  class="table">
+            <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+            <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">friend_id</td><td>*</td><td>json</td><tr>
+           <tr><td style="color:green">type_friend</td><td>+</td><td>json</td><tr>
+         
+         </table>
+
+                <h4>Info</h4>
+            <p>
+            This endpoint is for adding/sending friend.
+            </p>
+            <br>
+            <h4>Return</h4>
+            <p>Json of success of sending request.</p>
+            
+
+
+          </div>
+</li>
+
+
+<li><div class="collapsible-header teal waves-effect waves-light"> 
+<p>/api/v1.0/respond_add_friend  <io class="new badge orange">POST</io></p>
+          </div><div class="collapsible-body"> 
+            
+            <table  class="table">
+            <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+            <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">friend_id</td><td>*</td><td>json</td><tr>
+           <tr><td style="color:red">response(1,0,-1)</td><td>*</td><td>json</td><tr>
+
+         </table>
+
+                <h4>Info</h4>
+            <p>
+            This endpoint is for confirming friend or not allowing friend.
+        <br>	response -1 means not allowed, 0 means ignored, 1 means accepted   
+	 </p>
+            <br>
+            <h4>Return</h4>
+            Json of success of sending request.
+            
+
+          </div>
+ </li>
+
  
-  </div>
+  
+</ul>
 
-
-  
-  
-  
 </div>
  
- <br><br><br><br><br><center>Team Horizon</center><br><br><br>
+ <br><br><br><br><br><center class="teal-text">Team Horizon</center><br><br><br>
 </body>
 </html>
+
+
+<script>
+   $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+  </script>
+
