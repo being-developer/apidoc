@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>API Documentation Horizon</title>
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+  </script>
+</head>
+<style>
+
+h4{
+color:grey;
+}
+
+#accordion
+{
+position:relative;
+width:80%;
+left:10%;
+}
+
+</style>
+
+<body>
+ <center><h1> API DOCUMENTATION </h1>
+ <br>
+ <h2>Horizon</h2>
+ 
+ </center>
+<div id="accordion" >
+  
+  
+  <h3>/api/v1.0/login   [POST]</h3>
+  <div>
+    <li>
+    <table  class="table">
+    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+    <tr><td style="color:red">username</td><td>*</td><td>json/formData</td><tr>
+    <tr><td style="color:red">password</td><td>*</td><td>json/formData</td><tr>
+    </table>
+    
+    <h4>Info</h4>
+    <p>
+    This endpoint of for logging in the user. Send the username and password in same format.
+    </p>
+    <br>
+    <h4>Return</h4>
+    <li>access_token</li> 
+    </li>
+    
+  </div>
+  
+  
+   <h3>/api/v1.0/profile  [POST]</h3>
+  <div>
+    <li>
+    <table " class="table">
+    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+    <tr><td style="color:red">username</td><td>*</td><td>json/formData</td><tr>
+    <tr><td style="color:green">accessToken</td><td>+</td><td>header</td><tr>
+    </table>
+    
+        <h4>Info</h4>
+    <p>
+    This endpoint is for information related to users.
+    </p>
+    <br>
+    <h4>Return</h4>
+    <li>Json of user details.</li> 
+    </li>
+    
+  </div>
+  
+  
+  
+  <h3>/api/v1.0/logout  [GET,POST]</h3>
+  <div>
+    <li>
+    <table  class="table">
+    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+    </table>
+    
+        <h4>Info</h4>
+    <p>
+    This endpoint is for users to logout.
+    </p>
+    <br>
+    <h4>Return</h4>
+    <li>Json of logged out.</li> 
+    </li>
+    
+  </div>
+  
+  
+  
+  
+  
+  
+  <h3>/api/v1.0/connections  [GET,POST]</h3>
+  <div>
+    <li>
+    <table  class="table">
+    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+    <tr><td style="color:green">username</td><td>+</td><td>json</td><tr>
+    </table>
+    
+        <h4>Info</h4>
+    <p>
+    This endpoint is for getting user connections.
+    </p>
+    <br>
+    <h4>Return</h4>
+    <li>Json of connections.</li> 
+    </li>
+    
+ 
+  </div>
+  
+  
+  
+  
+  
+
+<h3>/api/v1.0/notifications  [POST]</h3>
+  <div>
+    <li>
+    <table  class="table">
+    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+    <tr><td style="color:green">since_time (notifications since time)</td><td>+</td><td>json</td><tr>
+   <tr><td style="color:green">untill_time (notifications untill time)</td><td>+</td><td>json</td><tr>
+	<tr><td style="color:green">all (if all notifications)</td><td>+</td><td>json</td><tr>
+
+ </table>
+    
+        <h4>Info</h4>
+    <p>
+    This endpoint is for getting user notiifications.[default latest 10 notifications]
+    </p>
+    <br>
+    <h4>Return</h4>
+    <li>Json of notification.</li> 
+    </li>
+    
+ 
+  </div>
+
+
+  
+  
+  
+</div>
+ 
+ <br><br><br><br><br><center>Team Horizon</center><br><br><br>
+</body>
+</html>
