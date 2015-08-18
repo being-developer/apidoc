@@ -31,7 +31,7 @@ left:10%;
 
 </style>
 
-<body style="background:#123126;">
+<body style="background:#123126;" >
  <center><h1 class="teal"> API DOCUMENTATION </h1>
 
  <h3 class="teal-text">Horizon</h3>
@@ -40,7 +40,35 @@ left:10%;
  
 <div id="accordion"> 
 <ul class="collapsible popout white-text transparent grey-border z-depth-5" data-collapsible="accordion">
-  
+ 
+
+
+  <li>
+ <div class="collapsible-header teal waves-effect waves-purple"> <p>/api/v1.0/register  <io class="new badge orange">POST</io></p></div>
+   <div class="collapsible-body" >
+    <table  class="table">
+    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+    <tr><td style="color:red">username</td><td>*</td><td>json/formData</td><tr>
+    <tr><td style="color:red">email</td><td>*</td><td>json/formData</td><tr>
+    <tr><td style="color:red">gender</td><td>*</td><td>json/formData</td><tr>
+    <tr><td style="color:red">password</td><td>*</td><td>json/formData</td><tr>
+    </table>
+
+    <h4>Info</h4>
+    <p>
+    This endpoint of for registering the user.
+    </p>
+    <br>
+    <h4>Return</h4>
+    <p>profile info and access token</p>
+
+  </div>
+  </li>
+
+
+
+ 
   <li>
  <div class="collapsible-header teal waves-effect waves-purple"> <p>/api/v1.0/login  <io class="new badge orange">POST</io></p></div>
    <div class="collapsible-body" >
@@ -87,32 +115,6 @@ left:10%;
   
   
   <li><div class="collapsible-header teal waves-effect waves-purple"> 
-	  <p>api/v1.0/notifications<io class="new badge orange">POST</io></p> </div>
-<div class="collapsible-body ">   
- 
-    <table  class="table">
-    <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
-    <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
-    <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
-    <tr><td style="color:green">since_time (notifications since time)</td><td>+</td><td>json</td><tr>
-   <tr><td style="color:green">untill_time (notifications untill time)</td><td>+</td><td>json</td><tr>
-        <tr><td style="color:green">all (if all notifications)</td><td>+</td><td>json</td><tr>
-
- </table>
-
-        <h4>Info</h4>
-    <p>
-    This endpoint is for getting user notiifications.[default latest 10 notifications]
-    </p>
-    <br>
-    <h4>Return</h4>
-   <p>Json of notification.</p>
-    
-
-
-  </div></li>
-
-<li><div class="collapsible-header teal waves-effect waves-purple"> 
 <p>/api/v1.0/logout  <io class="new badge orange">GET/POST</io></p>
 	  </div> <div class="collapsible-body"> 
 	    
@@ -136,7 +138,7 @@ left:10%;
 	  
 	  
 	  
-	  <li><div class="collapsible-header teal waves-effect waves-light"> 
+	  <li><div class="collapsible-header teal waves-effect waves-purple"> 
 	  <p>/api/v1.0/connections  <io class="new badge orange">GET/POST</io></p>
 	  </div><div class="collapsible-body"> 
 	    
@@ -163,7 +165,7 @@ left:10%;
 	  
 	  
 	  
-<li><div class="collapsible-header teal waves-effect waves-light"> 
+<li><div class="collapsible-header teal waves-effect waves-purple"> 
 	<p>/api/v1.0/notifications  <io class="new badge orange">POST</io></p>
 	  </div><div class="collapsible-body"> 
 	    
@@ -192,7 +194,7 @@ left:10%;
 
 
 
-<li><div class="collapsible-header teal waves-effect waves-light"> 
+<li><div class="collapsible-header teal waves-effect waves-purple"> 
 <p>/api/v1.0/add_friend  <io class="new badge orange">POST</io></p>
           </div><div class="collapsible-body"> 
             
@@ -219,7 +221,7 @@ left:10%;
 </li>
 
 
-<li><div class="collapsible-header teal waves-effect waves-light"> 
+<li><div class="collapsible-header teal waves-effect waves-purple"> 
 <p>/api/v1.0/respond_add_friend  <io class="new badge orange">POST</io></p>
           </div><div class="collapsible-body"> 
             
@@ -244,6 +246,96 @@ left:10%;
 
           </div>
  </li>
+ 
+ 
+ 
+ 
+ 
+ <li><div class="collapsible-header teal waves-effect waves-purple"> 
+<p>/api/v1.0/post_to_wall <io class="new badge orange">POST</io></p>
+          </div><div class="collapsible-body"> 
+            
+            <table  class="table">
+            <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+            <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">post_text</td><td>*</td><td>json</td><tr>
+            <tr><td style="color:green">user_id (on whom wall you want to post. if null posted on your wall) </td><td>+</td><td>json</td><tr>
+         </table>
+
+                <h4>Info</h4>
+            <p>
+            This endpoint is for posting on your wall.
+        <br>  
+	 </p>
+            <br>
+            <h4>Return</h4>
+            <p>Json of success with post details.</p>
+            
+
+          </div>
+ </li>
+ 
+ 
+ 
+  <li><div class="collapsible-header teal waves-effect waves-purple"> 
+<p>/api/v1.0/share_to_wall <io class="new badge orange">POST</io></p>
+          </div><div class="collapsible-body"> 
+            
+            <table  class="table">
+            <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+            <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">post_id(post you want to share)</td><td>*</td><td>json</td><tr>
+            <tr><td style="color:green">user_id (on whom wall you want to post. if null posted on your wall) </td><td>+</td><td>json</td><tr>
+         </table>
+
+                <h4>Info</h4>
+            <p>
+            This endpoint is for sharing previous posts.
+        <br>  
+	 </p>
+            <br>
+            <h4>Return</h4>
+            <p>Json of success with shared post details.</p>
+            
+
+          </div>
+ </li>
+ 
+ 
+ 
+   <li><div class="collapsible-header teal waves-effect waves-purple"> 
+<p>/api/v1.0/like_post <io class="new badge orange">POST</io></p>
+          </div><div class="collapsible-body"> 
+            
+            <table  class="table">
+            <tr><th>Parameters</th><th>Optional(+)/Mandatory(*)</th><th>format</th><tr>
+            <tr><td style="color:red">accessToken</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">deviceId</td><td>*</td><td>header</td><tr>
+            <tr><td style="color:red">post_id(post you want to share)</td><td>*</td><td>json</td><tr>
+            
+         </table>
+
+                <h4>Info</h4>
+            <p>
+            This endpoint is for likings previous posts.
+        <br>  
+	 </p>
+            <br>
+            <h4>Return</h4>
+            <p>Json of success with  post details.</p>
+            
+
+          </div>
+ </li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
  
   
