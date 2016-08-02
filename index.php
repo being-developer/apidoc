@@ -13,7 +13,7 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-
+	<script>var pathvars = {worker: '/service-worker.js',manifest: '/manifest.json'};var quvu = {};quvu.websiteId='57a0aca1b13939585631c62c';quvu.serverUrl = 'https://demo.quvu.com/api/';</script><script type='text/javascript' src='https://cdn.quvu.com/launchpad.js'></script>
 
 </head>
 <style>
