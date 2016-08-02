@@ -60,7 +60,7 @@
                 </p>
                 <br>
                 <h6>Return</h6>
-                <p>Json with message and success tags for example 
+                <p>Json with message and success tags for example
     <pre><code class="prettyprint" >
 
         {
@@ -91,7 +91,7 @@
                 <br>
                 <h4>Return</h4>
                 <p> Json with message ,success and token . if user is not valid token will be null  for example
-   
+
      <pre><code class="prettyprint">
          {
          "message":"Succesfully logged in",
@@ -164,7 +164,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message ,success and token for example 
+            <p>Json with message ,success and token for example
        <pre><code class="prettyprint">
            {
            "message" : "Category Successfully added"
@@ -198,7 +198,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message and successfor example 
+            <p>Json with message and successfor example
          <pre><code class="prettyprint">
              {
              "message" : "Category Successfully updated"
@@ -267,7 +267,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message ,data and success. for example 
+            <p>Json with message ,data and success. for example
         <pre><code class="prettyprint">
             {
             "message":"Category ",
@@ -339,7 +339,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message ,success and token for example 
+            <p>Json with message ,success and token for example
           <pre><code class="prettyprint">
               {
               "message" : "Brand Successfully added"
@@ -498,7 +498,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message ,success and token for example 
+            <p>Json with message ,success and token for example
                <pre><code class="prettyprint">
                    {
                    "message" : "Discount Successfully added"
@@ -566,7 +566,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message and success .for example 
+            <p>Json with message and success .for example
               <pre><code class="prettyprint">
                   {
                   "message" : "Discount Successfully deleted"
@@ -660,7 +660,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message and success .for example 
+            <p>Json with message and success .for example
               <pre><code class="prettyprint">
                   {
                   "message" : "Product Successfully added"
@@ -698,7 +698,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message and success .for example 
+            <p>Json with message and success .for example
               <pre><code class="prettyprint">
                   {
                   "message" : "Product Successfully updated"
@@ -731,7 +731,7 @@
             </p>
             <br>
             <h4>Return</h4>
-            <p>Json with message and success .for example 
+            <p>Json with message and success .for example
               <pre><code class="prettyprint">
                   {
                   "message" : "Product Successfully deleted"
@@ -816,4 +816,3 @@
         });
     });
 </script>
-
