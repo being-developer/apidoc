@@ -1,4 +1,4 @@
-'use strict';var QUVU_SW = {serverUrl: 'https://demo.quvu.com/api/',company_id: '57a9bb7f81556b791979cbfb',website_id: '57a9bb9581556b791979cbfd'};
+'use strict';var QUVU_SW = {serverUrl: 'https://www.quvu.com/api/',company_id: '57a9bb7f81556b791979cbfb',website_id: '57a9bb9581556b791979cbfd'};
 self.addEventListener('push', function(event) {
     QUVU_SW.responseCode = '';
     event.waitUntil(
